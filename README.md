@@ -1,6 +1,8 @@
 # 准备
+```
  python3 -m venv sys 创建虚拟环境
  source sys/bin/activate  激活虚拟环境
+```
 
 # 安装
 ```
