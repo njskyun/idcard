@@ -3,6 +3,8 @@
  source sys/bin/activate  激活虚拟环境
 
 # 【安装】
+ git clone git@github.com:njskyun/idcard.git
+ cd idcard
  pip install -r requirements.txt
 
 # 【cpu上需要安装】 
