@@ -8,12 +8,13 @@
  cd idcard
  pip install -r requirements.txt
 ```
+
 # 【cpu上需要安装】 
 ```
  pip install paddlepaddle -i https://www.paddlepaddle.org.cn/packages/stable/cpu/  安装 PaddlePaddle（CPU） 
  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu  安装 pytorch （CPU） 
 
-【cpu上需要改动】
+【改动】
  image_processing_app/models/cartoon-gan/predict.py 
  修改  parser.add_argument("-d", "--device", type=str, default="cuda")   parser.add_argument("-d", "--device", type=str, default="cpu") 
 ```
