@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+pillow
+opencv-python
+paddleocr>=2.0.1
+celery
+redis
+modnet
+transformers
+httpx     # CPU版，可换GPU版本
+paddleocr>=2.0.1
+python-dotenv
+pydantic-settings
