@@ -12,3 +12,7 @@ httpx     # CPU版，可换GPU版本
 paddleocr>=2.0.1
 python-dotenv
 pydantic-settings
+tqdm 
+pillow 
+numpy 
+matplotlib

@@ -9,6 +9,18 @@
  git clone git@github.com:njskyun/idcard.git
  cd idcard
  pip install -r requirements.txt
+
+ #cartoon-gan
+ cd models
+ git clone https://github.com/FilipAndersson245/cartoon-gan.git
+
+ #HivisionIDPhotos
+ git clone https://github.com/Zeyi-Lin/HivisionIDPhotos.git hivision_id
+ cd hivision_id
+ pip install -r requirements.txt
+ pip install -r requirements-app.txt
+ 下载人像抠图模型权重文件
+ python scripts/download_model.py --models all
 ```
 
 # cpu上需要安装 
