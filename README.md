@@ -16,10 +16,11 @@
 
 【改动】
  image_processing_app/models/cartoon-gan/predict.py 
- 修改  parser.add_argument("-d", "--device", type=str, default="cuda")   parser.add_argument("-d", "--device", type=str, default="cpu") 
+ 修改  parser.add_argument("-d", "--device", type=str, default="cuda")  
+ 为：  parser.add_argument("-d", "--device", type=str, default="cpu") 
 ```
 
-#运行任务
+# 运行任务
 ```
  uvicorn app.main:app --reload  #启动
  celery -A tasks.worker.celery_app worker --loglevel=info  #处理队列任务
