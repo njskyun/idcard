@@ -20,10 +20,16 @@
  image_processing_app/models/cartoon-gan/predict.py 
  修改  parser.add_argument("-d", "--device", type=str, default="cuda")  
  为：  parser.add_argument("-d", "--device", type=str, default="cpu") 
+
+ 修改  pretrained_dir = "./checkpoints/trained_netG.pth"
+ 为：
+ pretrained_dir = os.path.abspath("models/cartoon-gan/checkpoints/trained_netG.pth") 
 ```
 
 # 运行任务
 ```
- uvicorn app.main:app --reload  #启动
- celery -A tasks.worker.celery_app worker --loglevel=info  #处理队列任务
+ uvicorn app.main:app --reload  启动
+ celery -A tasks.worker.celery_app worker --loglevel=info  启动处理队列任务
+
+ celery -A tasks.celery_app.celery_app inspect registered  检查注册列表
 ```
