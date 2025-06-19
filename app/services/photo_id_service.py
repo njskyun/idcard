@@ -8,8 +8,8 @@ INF_SCRIPT = os.path.join(HV_PATH, "inference.py")
 
 def generate_id_photo_hivision(input_path): 
     input_path  = os.path.abspath(input_path) 
-    out_path    = os.path.abspath(settings.OUTPUT_DIR) 
-    out_path    = os.path.join(out_path, "idcard")
+    out_path    = os.path.abspath(settings.OUTPUT_DIR + "/idcard") 
+ 
 
     os.makedirs(out_path, exist_ok=True)
     basename = os.path.splitext(os.path.basename(input_path))[0]
@@ -24,6 +24,6 @@ def generate_id_photo_hivision(input_path):
     ]
     try:
         subprocess.run(cmd, check=True, cwd=HV_PATH)
-        return {"status": "SUCCESS", "result": output_path}
+        return {"status": "SUCCESS", "result": settings.OUTPUT_DIR + f"/idcard/{basename}_idphoto.png"}
     except subprocess.CalledProcessError as e:
         return {"status": "ERROR", "error": str(e)}

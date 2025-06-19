@@ -19,6 +19,5 @@ async def generate(file: UploadFile = File(...)):
 
     return {
         "status": "submitted",
-        "task_id": task.id,
-        "filename": file.filename
+        "task_id": task.id, 
     }

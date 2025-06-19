@@ -1,8 +1,9 @@
 # app/main.py
-
+import os
 from fastapi import FastAPI,Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from app.routes import photo_id, cartoonize, paddleocr, task_status
 from app.config import settings
@@ -34,10 +35,15 @@ app.include_router(paddleocr.router)
 
 PROJECT_ROOT = Path(__file__).parent.resolve()
 
+
+app.mount("/static", StaticFiles(directory=os.path.abspath("static")), name="static")
+
+
 @app.get("/", response_class=HTMLResponse)
 async def get_index(request: Request):
     templates = Jinja2Templates(directory=PROJECT_ROOT / "templates")
     return templates.TemplateResponse("index.html", {"request": request})
+
 
 if __name__ == "__main__":
     uvicorn.run(

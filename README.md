@@ -41,6 +41,8 @@
 # 运行任务
 ```
  uvicorn app.main:app --reload  启动
+ uvicorn app.main:app  --host 0.0.0.0 --port 8000 --reload 启动外网可访问
+
  celery -A tasks.worker.celery_app worker --loglevel=info  启动处理队列任务
 
  celery -A tasks.celery_app.celery_app inspect registered  检查注册列表

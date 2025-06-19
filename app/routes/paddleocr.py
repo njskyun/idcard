@@ -12,4 +12,8 @@ async def recognize(file: UploadFile = File(...)):
     with open(path, "wb") as f:
         f.write(await file.read())
     task = async_recognize_text.delay(path)
-    return {"task_id": task.id}
+
+    return {
+        "status": "submitted",
+        "task_id": task.id, 
+    }
