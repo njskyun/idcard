@@ -16,3 +16,4 @@ tqdm
 pillow 
 numpy 
 matplotlib
+openai

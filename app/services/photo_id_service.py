@@ -24,6 +24,6 @@ def generate_id_photo_hivision(input_path):
     ]
     try:
         subprocess.run(cmd, check=True, cwd=HV_PATH)
-        return {"status": "success", "output": output_path}
+        return {"status": "SUCCESS", "result": output_path}
     except subprocess.CalledProcessError as e:
-        return {"status": "error", "error": str(e)}
+        return {"status": "ERROR", "error": str(e)}

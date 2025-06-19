@@ -10,16 +10,31 @@ router = APIRouter(prefix="/task", tags=["Task"])
 @router.get("/{task_id}")
 async def get_task_status(task_id: str):
     task = AsyncResult(task_id, app=celery_app)
-    state = task.state  # e.g. PENDING, STARTED, SUCCESS, FAILURE
+    state = task.state  # PENDING, STARTED, SUCCESS, FAILURE
 
-    if state == "PENDING":
-        # 任务尚未入队或正在排队
-        return {"task_id": task_id, "status": "PENDING"}
-    elif state == "STARTED":
-        return {"task_id": task_id, "status": "STARTED"}
-    elif state == "SUCCESS":
-        return {"task_id": task_id, "status": "SUCCESS", "result": task.result}
+    ret = {
+        "task_id": task_id,
+        "status": state,
+        "error": "",
+        "result": ""
+    }
+
+    print(task.result)
+    if state == "SUCCESS":
+        result = task.result
+        if isinstance(result, dict) and result.get("status") == "SUCCESS":
+            ret["status"] = "SUCCESS"
+            ret["result"] = result.get("result")
+        else:
+            ret["status"] = "ERROR"
+            ret["error"] = result.get("error", "Unknown error") if isinstance(result, dict) else str(result)
+
     elif state == "FAILURE":
-        return {"task_id": task_id, "status": "FAILURE", "result": str(task.result)}
-    else:
-        return {"task_id": task_id, "status": state, "result": task.result}
+        # 捕获异常信息
+        try:
+            ret["error"] = str(task.result)
+        except Exception as e:
+            ret["error"] = f"Failed to get error: {e}"
+        ret["status"] = "ERROR"
+
+    return ret

@@ -19,6 +19,6 @@ def cartoonize_with_cartoon_gan(input_path):
     ]
     try:
         subprocess.run(cmd, check=True)
-        return {"status": "success", "output": output_path}
+        return {"status": "SUCCESS", "result": output_path}
     except subprocess.CalledProcessError as e:
-        return {"status": "error", "error": str(e)}
+        return {"status": "ERROR", "error": str(e)}

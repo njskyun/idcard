@@ -14,9 +14,9 @@ class Settings(BaseSettings):
     CELERY_BROKER_URL: str = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
     CELERY_RESULT_BACKEND: str = os.getenv("CELERY_RESULT_BACKEND", "redis://localhost:6379/1")
 
-    # 百度翻译API配置
-    BAIDU_APP_ID: str = os.getenv("BAIDU_APP_ID", "")
-    BAIDU_APP_KEY: str = os.getenv("BAIDU_APP_KEY", "")
+    # OPENAI配置
+    ZhipuAI_API_KEY: str = os.getenv("ZhipuAI_API_KEY", "") 
+    LLM_SESSION: str = os.getenv("LLM_SESSION", "session") 
 
     # 上传文件夹
     UPLOAD_DIR: str = "static/uploads"
