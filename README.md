@@ -41,7 +41,9 @@
 
  修改  pretrained_dir = "./checkpoints/trained_netG.pth"
  为：
- pretrained_dir = os.path.abspath("models/cartoon-gan/checkpoints/trained_netG.pth") 
+ pretrained_dir = os.path.abspath("models/cartoon-gan/checkpoints/trained_netG.pth")
+
+ 前往https://drive.google.com/drive/folders/1d_GsZncTGmMdYht0oUWG9pqvV4UqF_kM下载trained_netG.pth并放到models/cartoon-gan/checkpoints/目录下
 ```
 
 # 运行任务
