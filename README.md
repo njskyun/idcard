@@ -1,6 +1,6 @@
 # 准备
 ```
- 系统安装OpenGL的动态连接库
+ Ubuntu系统安装OpenGL的动态连接库
  sudo apt update
  sudo apt install -y libgl1-mesa-glx
 
