@@ -31,7 +31,7 @@
  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu  安装 pytorch （CPU） 
 
 【改动】
- image_processing_app/models/cartoon-gan/predict.py 
+  models/cartoon-gan/predict.py 
  修改  parser.add_argument("-d", "--device", type=str, default="cuda")  
  为：  parser.add_argument("-d", "--device", type=str, default="cpu") 
 
