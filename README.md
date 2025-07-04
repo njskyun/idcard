@@ -1,12 +1,14 @@
 # 准备
 ```
- python3 -m venv sys 创建虚拟环境
- source sys/bin/activate  激活虚拟环境
+ 下载安装conda
+ https://www.anaconda.com/docs/getting-started/miniconda/install
+ conda create --name idcard python=3.10 
+ conda activate idcard
 ```
 
 # 安装
 ```
- git clone git@github.com:njskyun/idcard.git
+ git clone https://github.com/njskyun/idcard.git
  cd idcard
  pip install -r requirements.txt
 
