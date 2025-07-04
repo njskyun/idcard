@@ -11,7 +11,7 @@ from pathlib import Path
 import uvicorn
 
 
-
+ 
 
 app = FastAPI(
     title=settings.APP_NAME,
