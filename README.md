@@ -1,5 +1,8 @@
 # 准备
 ```
+ 系统安装OpenGL的动态连接库
+ sudo apt install -y libgl1-mesa-glx
+
  下载安装conda
  https://www.anaconda.com/docs/getting-started/miniconda/install
  conda create --name idcard python=3.10 
