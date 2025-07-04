@@ -29,7 +29,7 @@
  python scripts/download_model.py --models all
 ```
 
-# cpu上需要安装 
+# cpu上
 ```
  pip install paddlepaddle -i https://www.paddlepaddle.org.cn/packages/stable/cpu/  安装 PaddlePaddle（CPU） 
  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu  安装 pytorch （CPU） 
